@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "slug": "demo",
+  "fps": 30,
+  "scenes": [
+    { "id": "d01", "template": "title", "duration": 2.5, "props": { "kicker": "motion-skill", "title": "A function of time", "subtitle": "Every frame is drawn by render(t)." } },
+    { "id": "d02", "template": "big-idea", "duration": 2.5, "props": { "text": "Same {{t}}, same picture. Every time.", "caption": "Deterministic by construction", "revealPerSecond": 4 } }
+  ],
+  "cuts": { "vertical": { "format": "9:16", "scenes": [{ "id": "d01" }, { "id": "d02" }] } }
+}

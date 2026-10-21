@@ -1,0 +1,140 @@
+{
+  "name": "default",
+  "source": "Neutral starter tokens: dark ground, warm ink, one cyan accent. Edit freely.",
+  "theme": "dark",
+  "palettes": {
+    "dark": {
+      "bg": "#0a0a0f",
+      "surface": "#16161d",
+      "surface2": "#22222b",
+      "ink": "#ebe9e4",
+      "muted": "#a8a6a1",
+      "accent": "#40D0F0",
+      "accentInk": "#0a0a0f",
+      "line": "#2c2c36",
+      "lineStrong": "#8a8994"
+    },
+    "light": {
+      "bg": "#fafafa",
+      "surface": "#efeff0",
+      "surface2": "#e3e3e6",
+      "ink": "#17171a",
+      "muted": "#55545a",
+      "accent": "#1b4d89",
+      "accentInk": "#ffffff",
+      "line": "#d6d4cd",
+      "lineStrong": "#6b6a70"
+    }
+  },
+  "fonts": {
+    "serif": {
+      "family": "Source Serif 4",
+      "files": {
+        "normal": "assets/fonts/SourceSerif4-latin-wght-normal.woff2",
+        "italic": "assets/fonts/SourceSerif4-latin-wght-italic.woff2"
+      },
+      "weights": "400 700"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "files": {
+        "400": "assets/fonts/JetBrainsMono-latin-400.woff2",
+        "700": "assets/fonts/JetBrainsMono-latin-700.woff2"
+      }
+    },
+    "brand": {
+      "family": "Space Grotesk",
+      "files": {
+        "500": "assets/fonts/SpaceGrotesk-latin-500.woff2",
+        "700": "assets/fonts/SpaceGrotesk-latin-700.woff2"
+      }
+    }
+  },
+  "type": {
+    "_note": "px at 1080 px short side; scaled by min(W,H)/1080. Floor 36 px (spec V2).",
+    "display": {
+      "px": 128,
+      "weight": 600,
+      "lineHeight": 1.05,
+      "font": "serif"
+    },
+    "title": {
+      "px": 88,
+      "weight": 600,
+      "lineHeight": 1.1,
+      "font": "serif"
+    },
+    "heading": {
+      "px": 64,
+      "weight": 600,
+      "lineHeight": 1.15,
+      "font": "serif"
+    },
+    "body": {
+      "px": 52,
+      "weight": 400,
+      "lineHeight": 1.3,
+      "font": "serif"
+    },
+    "label": {
+      "px": 40,
+      "weight": 500,
+      "lineHeight": 1.25,
+      "font": "serif"
+    },
+    "mono": {
+      "px": 40,
+      "weight": 400,
+      "lineHeight": 1.3,
+      "font": "mono"
+    },
+    "small": {
+      "px": 36,
+      "weight": 400,
+      "lineHeight": 1.3,
+      "font": "serif"
+    }
+  },
+  "space": [
+    8,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192
+  ],
+  "radius": 6,
+  "stroke": {
+    "thin": 2,
+    "base": 3,
+    "bold": 5
+  },
+  "measureEm": 28,
+  "motion": {
+    "_note": "seconds; curve names from engine/ease.mjs. Entrance 0.7 s cubic-bezier(0.2,0.7,0.2,1); small 0.12-0.2 s ease-out.",
+    "enter": {
+      "dur": 0.7,
+      "ease": "house",
+      "rise": 24
+    },
+    "small": {
+      "dur": 0.2,
+      "ease": "outQuad"
+    },
+    "stagger": 0.12,
+    "sceneFade": 0.35,
+    "draw": {
+      "dur": 0.9,
+      "ease": "inOutCubic"
+    }
+  },
+  "dials": {
+    "_note": "Our own dials (taste-skill v2 removed its dials). 1-10.",
+    "DESIGN_VARIANCE": 4,
+    "MOTION_INTENSITY": 4,
+    "VISUAL_DENSITY": 3
+  }
+}

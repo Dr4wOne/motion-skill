@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "slug": "archify-scene",
+  "fps": 30,
+  "scenes": [
+    { "id": "a01", "template": "archify-diagram", "duration": 7, "props": { "layoutFile": "examples/archify/production-deployment.layout.json", "heading": "Full layout" } },
+    { "id": "a02", "template": "archify-diagram", "duration": 6, "props": { "layoutFile": "examples/archify/production-deployment.layout.json", "focus": ["clients", "edge", "gateway", "api_a", "api_b", "redis", "postgres"] } }
+  ]
+}

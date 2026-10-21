@@ -1,0 +1,584 @@
+{
+  "version": 1,
+  "source": {
+    "tool": "archify",
+    "type": "architecture"
+  },
+  "viewBox": {
+    "w": 1376,
+    "h": 790
+  },
+  "nodes": [
+    {
+      "id": "clients",
+      "label": "Customers",
+      "x": 38,
+      "y": 300,
+      "w": 122,
+      "h": 60,
+      "type": "external",
+      "rank": 0
+    },
+    {
+      "id": "edge",
+      "label": "Global Edge",
+      "x": 230,
+      "y": 300,
+      "w": 126,
+      "h": 60,
+      "type": "cloud",
+      "rank": 1
+    },
+    {
+      "id": "gateway",
+      "label": "API Gateway",
+      "x": 430,
+      "y": 300,
+      "w": 128,
+      "h": 60,
+      "type": "security",
+      "rank": 2
+    },
+    {
+      "id": "api_a",
+      "label": "API Pods / AZ-a",
+      "x": 630,
+      "y": 195,
+      "w": 136,
+      "h": 62,
+      "type": "backend",
+      "rank": 3
+    },
+    {
+      "id": "api_b",
+      "label": "API Pods / AZ-b",
+      "x": 630,
+      "y": 405,
+      "w": 136,
+      "h": 62,
+      "type": "backend",
+      "rank": 3
+    },
+    {
+      "id": "redis",
+      "label": "Redis",
+      "x": 840,
+      "y": 195,
+      "w": 126,
+      "h": 62,
+      "type": "database",
+      "rank": 4
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "x": 840,
+      "y": 405,
+      "w": 126,
+      "h": 62,
+      "type": "database",
+      "rank": 4
+    },
+    {
+      "id": "events",
+      "label": "Event Bus",
+      "x": 1040,
+      "y": 300,
+      "w": 126,
+      "h": 60,
+      "type": "messagebus",
+      "rank": 4
+    },
+    {
+      "id": "worker",
+      "label": "Workers",
+      "x": 1190,
+      "y": 300,
+      "w": 126,
+      "h": 60,
+      "type": "backend",
+      "rank": 5
+    },
+    {
+      "id": "replica",
+      "label": "DR Replica",
+      "x": 1040,
+      "y": 640,
+      "w": 126,
+      "h": 62,
+      "type": "database",
+      "rank": 5
+    },
+    {
+      "id": "audit",
+      "label": "Audit Archive",
+      "x": 1190,
+      "y": 492,
+      "w": 126,
+      "h": 62,
+      "type": "cloud",
+      "rank": 6
+    },
+    {
+      "id": "observability",
+      "label": "Observability",
+      "x": 1190,
+      "y": 85,
+      "w": 126,
+      "h": 62,
+      "type": "external",
+      "rank": 6
+    }
+  ],
+  "boundaries": [
+    {
+      "id": "b1",
+      "kind": "region",
+      "label": "AWS us-east-1 / production",
+      "x": 210,
+      "y": 171,
+      "w": 1126,
+      "h": 403,
+      "wraps": [
+        "edge",
+        "gateway",
+        "api_a",
+        "api_b",
+        "redis",
+        "postgres",
+        "events",
+        "worker",
+        "audit"
+      ]
+    },
+    {
+      "id": "b2",
+      "kind": "security-group",
+      "label": "private application network",
+      "x": 616,
+      "y": 171,
+      "w": 714,
+      "h": 316,
+      "wraps": [
+        "api_a",
+        "api_b",
+        "redis",
+        "postgres",
+        "events",
+        "worker"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "region",
+      "label": "AWS eu-west-1 / disaster recovery",
+      "x": 1006,
+      "y": 598,
+      "w": 194,
+      "h": 124,
+      "wraps": [
+        "replica"
+      ]
+    },
+    {
+      "id": "b4",
+      "kind": "security-group",
+      "label": "DR private subnet",
+      "x": 1026,
+      "y": 616,
+      "w": 154,
+      "h": 106,
+      "wraps": [
+        "replica"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "clients->edge#0",
+      "from": "clients",
+      "to": "edge",
+      "variant": "emphasis",
+      "points": [
+        [
+          160,
+          330
+        ],
+        [
+          230,
+          330
+        ]
+      ],
+      "length": 70,
+      "label": "HTTPS",
+      "labelAt": [
+        195,
+        320
+      ],
+      "step": 0
+    },
+    {
+      "id": "edge->gateway#1",
+      "from": "edge",
+      "to": "gateway",
+      "variant": "security",
+      "points": [
+        [
+          356,
+          330
+        ],
+        [
+          430,
+          330
+        ]
+      ],
+      "length": 74,
+      "label": "mTLS",
+      "labelAt": [
+        393,
+        320
+      ],
+      "step": 1
+    },
+    {
+      "id": "gateway->api_a#2",
+      "from": "gateway",
+      "to": "api_a",
+      "variant": "emphasis",
+      "points": [
+        [
+          558,
+          330
+        ],
+        [
+          594,
+          330
+        ],
+        [
+          594,
+          226
+        ],
+        [
+          630,
+          226
+        ]
+      ],
+      "length": 176,
+      "label": "VPC route",
+      "labelAt": [
+        594,
+        275
+      ],
+      "step": 2
+    },
+    {
+      "id": "gateway->api_b#3",
+      "from": "gateway",
+      "to": "api_b",
+      "variant": "emphasis",
+      "points": [
+        [
+          558,
+          330
+        ],
+        [
+          594,
+          330
+        ],
+        [
+          594,
+          436
+        ],
+        [
+          630,
+          436
+        ]
+      ],
+      "length": 178,
+      "label": "VPC route",
+      "labelAt": [
+        594,
+        385
+      ],
+      "step": 3
+    },
+    {
+      "id": "api_a->redis#4",
+      "from": "api_a",
+      "to": "redis",
+      "variant": "default",
+      "points": [
+        [
+          766,
+          226
+        ],
+        [
+          840,
+          226
+        ]
+      ],
+      "length": 74,
+      "label": "cache",
+      "labelAt": [
+        803,
+        216
+      ],
+      "step": 4
+    },
+    {
+      "id": "api_b->postgres#5",
+      "from": "api_b",
+      "to": "postgres",
+      "variant": "default",
+      "points": [
+        [
+          766,
+          436
+        ],
+        [
+          840,
+          436
+        ]
+      ],
+      "length": 74,
+      "label": "SQL",
+      "labelAt": [
+        803,
+        426
+      ],
+      "step": 5
+    },
+    {
+      "id": "api_a->events#6",
+      "from": "api_a",
+      "to": "events",
+      "variant": "dashed",
+      "points": [
+        [
+          698,
+          195
+        ],
+        [
+          698,
+          170
+        ],
+        [
+          1103,
+          170
+        ],
+        [
+          1103,
+          300
+        ]
+      ],
+      "length": 560,
+      "label": "publish",
+      "labelAt": [
+        901,
+        160
+      ],
+      "step": 6
+    },
+    {
+      "id": "api_b->events#7",
+      "from": "api_b",
+      "to": "events",
+      "variant": "dashed",
+      "points": [
+        [
+          698,
+          405
+        ],
+        [
+          698,
+          380
+        ],
+        [
+          1103,
+          380
+        ],
+        [
+          1103,
+          360
+        ]
+      ],
+      "length": 450,
+      "step": 7
+    },
+    {
+      "id": "events->worker#8",
+      "from": "events",
+      "to": "worker",
+      "variant": "emphasis",
+      "points": [
+        [
+          1166,
+          330
+        ],
+        [
+          1190,
+          330
+        ]
+      ],
+      "length": 24,
+      "step": 8
+    },
+    {
+      "id": "postgres->replica#9",
+      "from": "postgres",
+      "to": "replica",
+      "variant": "security",
+      "points": [
+        [
+          903,
+          467
+        ],
+        [
+          903,
+          553.5
+        ],
+        [
+          1103,
+          553.5
+        ],
+        [
+          1103,
+          640
+        ]
+      ],
+      "length": 373,
+      "label": "cross-region WAL",
+      "labelAt": [
+        1003,
+        529
+      ],
+      "step": 9
+    },
+    {
+      "id": "worker->audit#10",
+      "from": "worker",
+      "to": "audit",
+      "variant": "dashed",
+      "points": [
+        [
+          1253,
+          360
+        ],
+        [
+          1253,
+          492
+        ]
+      ],
+      "length": 132,
+      "label": "evidence",
+      "labelAt": [
+        1253,
+        408
+      ],
+      "step": 10
+    },
+    {
+      "id": "worker->observability#11",
+      "from": "worker",
+      "to": "observability",
+      "variant": "dashed",
+      "points": [
+        [
+          1253,
+          300
+        ],
+        [
+          1253,
+          223.5
+        ],
+        [
+          1253,
+          223.5
+        ],
+        [
+          1253,
+          147
+        ]
+      ],
+      "length": 153,
+      "label": "OTLP",
+      "labelAt": [
+        1253,
+        214
+      ],
+      "step": 11
+    }
+  ],
+  "labels": [
+    {
+      "text": "HTTPS",
+      "x": 178,
+      "y": 310,
+      "w": 34,
+      "h": 14
+    },
+    {
+      "text": "mTLS",
+      "x": 378,
+      "y": 310,
+      "w": 30,
+      "h": 14
+    },
+    {
+      "text": "VPC route",
+      "x": 567,
+      "y": 265,
+      "w": 53,
+      "h": 14
+    },
+    {
+      "text": "VPC route",
+      "x": 567,
+      "y": 375,
+      "w": 53,
+      "h": 14
+    },
+    {
+      "text": "cache",
+      "x": 786,
+      "y": 206,
+      "w": 34,
+      "h": 14
+    },
+    {
+      "text": "SQL",
+      "x": 788,
+      "y": 416,
+      "w": 30,
+      "h": 14
+    },
+    {
+      "text": "publish",
+      "x": 879,
+      "y": 150,
+      "w": 44,
+      "h": 14
+    },
+    {
+      "text": "cross-region WAL",
+      "x": 960,
+      "y": 519,
+      "w": 87,
+      "h": 14
+    },
+    {
+      "text": "evidence",
+      "x": 1229,
+      "y": 398,
+      "w": 48,
+      "h": 14
+    },
+    {
+      "text": "OTLP",
+      "x": 1238,
+      "y": 204,
+      "w": 30,
+      "h": 14
+    }
+  ]
+}

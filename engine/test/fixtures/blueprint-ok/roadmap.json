@@ -1,0 +1,5 @@
+{ "thesis": "A widget turns input into output.", "overviewDiagram": { "nodes": ["input", "widget", "output"] },
+  "topics": [
+    { "id": "t1", "title": "Input", "promise": "What goes into a widget.", "sourceAnchors": ["#a"], "budgetSec": 30, "glossaryIntroduced": ["widget"], "recap": "A widget takes input." },
+    { "id": "t2", "title": "Gears", "promise": "How gears move the input.", "sourceAnchors": ["#b"], "budgetSec": 30, "glossaryIntroduced": ["gear"], "recap": "Gears move the input along." },
+    { "id": "t3", "title": "Output", "promise": "What comes out at the end.", "sourceAnchors": ["#c"], "budgetSec": 30, "glossaryIntroduced": [], "recap": "Output is the moved input." } ] }

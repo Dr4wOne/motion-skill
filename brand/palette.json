@@ -1,0 +1,12 @@
+{
+  "_note": "Reference palette for qa/palette: every colour drawn in brand scenes (sting, outro) must be within CIEDE2000 5 of one of these.",
+  "colors": [
+    { "hex": "#0A0A0F", "role": "background" },
+    { "hex": "#16161D", "role": "surface" },
+    { "hex": "#2C2C36", "role": "line" },
+    { "hex": "#8A8994", "role": "line strong" },
+    { "hex": "#EBE9E4", "role": "ink" },
+    { "hex": "#A8A6A1", "role": "muted ink" },
+    { "hex": "#40D0F0", "role": "accent" }
+  ]
+}

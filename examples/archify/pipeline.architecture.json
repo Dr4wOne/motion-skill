@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": { "title": "Article to video", "output": "pipeline.html" },
+  "components": [
+    { "id": "article", "type": "external", "label": "Article", "sublabel": "URL or markdown", "pos": [40, 200], "size": [140, 64] },
+    { "id": "script", "type": "backend", "label": "Script", "sublabel": "anchored sentences", "pos": [260, 200], "size": [140, 64] },
+    { "id": "storyboard", "type": "backend", "label": "Storyboard", "sublabel": "scenes + props", "pos": [480, 200], "size": [150, 64] },
+    { "id": "render", "type": "backend", "label": "render(t)", "sublabel": "headless Chromium", "pos": [710, 200], "size": [150, 64] },
+    { "id": "ffmpeg", "type": "backend", "label": "FFmpeg", "sublabel": "H.264 + AAC", "pos": [940, 200], "size": [140, 64] },
+    { "id": "qa", "type": "security", "label": "QA", "sublabel": "overflow, contrast, determinism", "pos": [710, 360], "size": [150, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "your machine", "wraps": ["storyboard", "render", "ffmpeg", "qa"], "pad": 20 }
+  ],
+  "connections": [
+    { "from": "article", "to": "script", "label": "claims" },
+    { "from": "script", "to": "storyboard" },
+    { "from": "storyboard", "to": "render" },
+    { "from": "render", "to": "ffmpeg", "label": "frames" },
+    { "from": "render", "to": "qa", "label": "manifests", "labelAt": [785, 312] }
+  ]
+}

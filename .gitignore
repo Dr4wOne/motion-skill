@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.cache/
+out/
+**/out/
+projects/*
+!projects/README.md
+engine/demo/qa-report.*
+examples/*/qa-report.*
+examples/*/audio/
+examples/*/captions/
+brand/preview/
+*.mp4
+memory/

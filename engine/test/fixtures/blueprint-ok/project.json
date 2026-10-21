@@ -1,0 +1,1 @@
+{ "slug": "blueprint-ok", "format": "16:9", "fps": 30, "blueprint": { "coldOpen": true, "sting": true, "mainSeconds": [140, 180] } }

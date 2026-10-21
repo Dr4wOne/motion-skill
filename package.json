@@ -1,0 +1,38 @@
+{
+  "name": "motion-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent Skill: turn an article into a narrated explainer video drawn by code (deterministic render(t) in headless Chromium + FFmpeg).",
+  "author": "Daniel Baumann (Dr4wOne)",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "new": "node scripts/new-video.mjs",
+    "render": "node engine/render.mjs",
+    "check": "node engine/check.mjs",
+    "demo": "node engine/demo.mjs",
+    "voice-check": "node scripts/voice-check.mjs",
+    "test": "node --test \"engine/test/*.test.mjs\"",
+    "encode": "node engine/encode.mjs",
+    "board": "node scripts/board.mjs",
+    "storyboard": "node scripts/storyboard-html.mjs",
+    "sfx": "node engine/audio/sfx.mjs",
+    "narrate": "node engine/audio/narrate.mjs",
+    "mix": "node engine/audio/mix.mjs",
+    "lint:blueprint": "node engine/blueprint/lint.mjs",
+    "chapters": "node engine/blueprint/chapters.mjs",
+    "screenplay": "node engine/blueprint/screenplay.mjs",
+    "music": "node engine/audio/music.mjs",
+    "provenance": "node engine/qa/music-provenance.mjs",
+    "brand:preview": "node scripts/brand-preview.mjs",
+    "diagram:layout": "node scripts/diagram-layout.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.64.1"
+  }
+}

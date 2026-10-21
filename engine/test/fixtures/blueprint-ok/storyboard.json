@@ -1,0 +1,130 @@
+{
+ "version": 1,
+ "slug": "blueprint-ok",
+ "fps": 30,
+ "scenes": [
+  {
+   "id": "s0",
+   "block": "cold-open",
+   "duration": 8,
+   "template": "big-idea",
+   "narration": "Ever wondered what a widget does?",
+   "say": "cold:0"
+  },
+  {
+   "id": "sting",
+   "block": "sting",
+   "duration": 5,
+   "template": "title"
+  },
+  {
+   "id": "s1",
+   "block": "intro",
+   "duration": 10,
+   "template": "big-idea",
+   "narration": "This is the channel.",
+   "say": "intro:0"
+  },
+  {
+   "id": "s2",
+   "block": "overview",
+   "duration": 20,
+   "template": "big-idea",
+   "narration": "A widget turns input into output."
+  },
+  {
+   "id": "s3",
+   "block": "roadmap",
+   "duration": 10,
+   "template": "roadmap"
+  },
+  {
+   "id": "t1a",
+   "block": "topic",
+   "duration": 22,
+   "template": "big-idea",
+   "topic": "t1",
+   "part": "concept",
+   "narration": "A widget takes something in.",
+   "say": "t1a:0"
+  },
+  {
+   "id": "t1r",
+   "block": "topic",
+   "duration": 8,
+   "template": "big-idea",
+   "topic": "t1",
+   "part": "recap",
+   "narration": "A widget takes input.",
+   "props": {
+    "text": "A widget takes input."
+   },
+   "say": "t1r:0"
+  },
+  {
+   "id": "t2a",
+   "block": "topic",
+   "duration": 22,
+   "template": "big-idea",
+   "topic": "t2",
+   "part": "concept",
+   "narration": "A gear moves it.",
+   "say": "t2a:0"
+  },
+  {
+   "id": "t2r",
+   "block": "topic",
+   "duration": 8,
+   "template": "big-idea",
+   "topic": "t2",
+   "part": "recap",
+   "narration": "Gears move the input along.",
+   "props": {
+    "text": "Gears move the input along."
+   },
+   "say": "t2r:0"
+  },
+  {
+   "id": "t3a",
+   "block": "topic",
+   "duration": 22,
+   "template": "big-idea",
+   "topic": "t3",
+   "part": "concept",
+   "narration": "Then it comes out.",
+   "say": "t3a:0"
+  },
+  {
+   "id": "t3r",
+   "block": "topic",
+   "duration": 8,
+   "template": "big-idea",
+   "topic": "t3",
+   "part": "recap",
+   "narration": "Output is the moved input.",
+   "props": {
+    "text": "Output is the moved input."
+   },
+   "say": "t3r:0"
+  },
+  {
+   "id": "fp",
+   "block": "full-picture",
+   "duration": 12,
+   "template": "recap"
+  },
+  {
+   "id": "tk",
+   "block": "takeaways",
+   "duration": 10,
+   "template": "big-idea"
+  },
+  {
+   "id": "out",
+   "block": "outro",
+   "duration": 16,
+   "template": "title"
+  }
+ ],
+ "cuts": {}
+}

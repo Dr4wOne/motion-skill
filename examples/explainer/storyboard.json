@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "slug": "explainer",
+  "fps": 30,
+  "scenes": [
+    { "id": "sting", "block": "sting", "template": "intro/signal-trace", "brand": true, "duration": 5, "props": {} },
+    { "id": "e01", "template": "title", "duration": 4, "props": { "title": "Where a request goes", "subtitle": "A layout computed by Archify, drawn frame by frame in the video style." } },
+    { "id": "e02", "template": "archify-diagram", "duration": 10, "props": {
+      "layoutFile": "examples/archify/production-deployment.layout.json",
+      "heading": "From the customer to the database",
+      "focus": ["clients", "edge", "gateway", "api_a", "api_b", "redis", "postgres"],
+      "start": 0.6, "rankStep": 0.55
+    } },
+    { "id": "outro", "block": "outro", "template": "outro/link-cards", "brand": true, "duration": 12, "props": { "preview": true } }
+  ]
+}

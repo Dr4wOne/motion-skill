@@ -1,0 +1,9 @@
+{
+  "slug": "explainer",
+  "title": "Example: an Archify diagram in a short explainer",
+  "format": "16:9",
+  "fps": 30,
+  "style": "default",
+  "audio": { "sfx": true, "narration": null, "music": null },
+  "acceptance": { "minSeconds": 30, "maxSeconds": 32 }
+}

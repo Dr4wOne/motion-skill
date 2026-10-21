@@ -1,0 +1,5 @@
+{ "version": 1, "slug": "broken", "fps": 30,
+  "scenes": [
+    { "id": "bad", "module": "scenes/bad.mjs", "duration": 1.5 },
+    { "id": "rand", "module": "scenes/rand.mjs", "duration": 1 }
+  ], "cuts": {} }

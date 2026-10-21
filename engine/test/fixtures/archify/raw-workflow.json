@@ -1,0 +1,15 @@
+{
+  "contract": "fixed-v1",
+  "viewBox": [600, 300],
+  "nodes": [
+    { "id": "draft", "lane": "author", "col": 0, "x": 40, "y": 60, "width": 100, "height": 50 },
+    { "id": "review", "lane": "reviewer", "col": 1, "x": 220, "y": 180, "width": 100, "height": 50 },
+    { "id": "publish", "lane": "author", "col": 2, "x": 400, "y": 60, "width": 100, "height": 50 }
+  ],
+  "edges": [
+    { "id": null, "from": "draft", "to": "review", "points": [[90, 110], [90, 205], [220, 205]] },
+    { "id": null, "from": "review", "to": "publish", "points": [[320, 205], [450, 205], [450, 110]] }
+  ],
+  "labels": [{ "edge": null, "label": "approve", "x": 360, "y": 190, "width": 50, "height": 14 }],
+  "diagnostics": []
+}

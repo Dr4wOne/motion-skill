@@ -1,0 +1,5 @@
+[
+  { "platform": "website", "url": "https://example.com/", "status": "confirmed", "outro": true, "placeholder": true, "note": "Placeholder. Replace with your own site, or delete." },
+  { "platform": "youtube", "url": "https://www.youtube.com/@your-channel", "display": "youtube.com/@your-channel", "status": "confirmed", "outro": true, "placeholder": true, "note": "Placeholder. Replace with your channel URL." },
+  { "platform": "github", "url": "https://github.com/your-name", "display": "github.com/your-name", "status": "confirmed", "outro": true, "placeholder": true, "note": "Placeholder. Replace or delete." }
+]

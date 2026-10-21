@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": { "title": "Publishing a post" },
+  "lanes": [{ "id": "author", "label": "Author" }, { "id": "reviewer", "label": "Reviewer" }],
+  "nodes": [
+    { "id": "draft", "lane": "author", "col": 0, "label": "Draft", "sublabel": "write it" },
+    { "id": "review", "lane": "reviewer", "col": 1, "label": "Review" },
+    { "id": "publish", "lane": "author", "col": 2, "label": "Publish" }
+  ],
+  "edges": [{ "from": "draft", "to": "review" }, { "from": "review", "to": "publish", "label": "approve" }]
+}

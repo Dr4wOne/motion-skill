@@ -1,0 +1,1 @@
+{ "slug": "demo", "title": "Engine demo", "format": "16:9", "fps": 30, "style": "default", "acceptance": { "minSeconds": 4.9, "maxSeconds": 5.1 } }
